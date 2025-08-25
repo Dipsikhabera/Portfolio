@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./media.css">
+</head>
+<body>
+ <!-- Header -->
+  <header>
+   <h2>Portfolio</h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-image">
+      <img src="./images/Dipsikha_Photo.jpeg" alt="My Photo">
+    </div>
+    <h1>Hi, I'm <span>Dipsikha Bera</span></h1>
+    <p>A passionate Full Stack Developer (Fresher)</p>
+    <a href="#projects" class="btn">View My Work</a>
+    <a href="resume.pdf" download class="btn btn-outline">Download Resume</a>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
+
+  <!-- Skills & Education -->
+  <section id="skills">
+    <h2>My Skills & Education</h2>
+    <div class="toggle-buttons">
+      <button onclick="showContent('skills')" id="btn-skills" class="active">Skills</button>
+      <button onclick="showContent('education')" id="btn-education">Education</button>
+    </div>
+
+    <div class="skills-icons active" id="skills-content">
+      <i class="fab fa-html5"></i>
+      <i class="fab fa-css3-alt"></i>
+      <i class="fab fa-js"></i>
+      <i class="fab fa-react"></i>
+      <i class="fab fa-node"></i>
+      <i class="fas fa-database"></i>
+    </div>
+
+    <div class="education-content" id="education-content">
+         <div class="education-card">
+        <h3>Masters of Technology</h3>
+        <p>Computer Application</p>
+        <p>Skkim Manipal University - 2023</p>
+      </div>
+      <div class="education-card">
+        <h3>Bachelor of Science</h3>
+        <p>Health Science</p>
+        <p>Rajib Gandhi University of Health Science - 2022</p>
+      </div>
+      <div class="education-card">
+        <h3>Higher Secondary</h3>
+        <p>Science Stream</p>
+        <p>Vidyasagar Vidyapith Girls' High School - 2018</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./images/image-1.jpeg" alt="Project 1"></div>
+        <div class="swiper-slide"><img src="./images/photo-2.jpeg" alt="Project 2"></div>
+        <div class="swiper-slide"><img src="./images/photo-3.jpeg" alt="Project 3"></div>
+        <div class="swiper-slide"><img src="./images/photo-4.jpeg" alt="Project 4"></div>
+        <div class="swiper-slide"><img src="./images/photo-5.jpeg" alt="Project 5"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: dipsikhabera@gmail.com</p>
+    <p>Phone: +91-8769798260</p>
+    <P>linkedin:</P>
+  </section>
+
+  <footer>
+    <p>© 2025 Dipsikha Bera | All Rights Reserved</p>
+  </footer>
+
+  <!-- SwiperJS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop:true,
+      autoplay:{delay:2500,disableOnInteraction:false},
+      pagination:{el:".swiper-pagination",clickable:true},
+    });
+
+    function showContent(type){
+      document.getElementById('skills-content').classList.remove('active');
+      document.getElementById('education-content').classList.remove('active');
+      document.getElementById('btn-skills').classList.remove('active');
+      document.getElementById('btn-education').classList.remove('active');
+      if(type==='skills'){
+        document.getElementById('skills-content').classList.add('active');
+        document.getElementById('btn-skills').classList.add('active');
+      } else {
+        document.getElementById('education-content').classList.add('active');
+        document.getElementById('btn-education').classList.add('active');
+      }
+    }
+  </script>
+  
+
+
+
+</body>
+</html>
